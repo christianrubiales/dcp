@@ -21,7 +21,8 @@ public class TwoSumBenchmarkUtil {
 	public static void main(String[] args) throws IOException {
 //		generateTestFile();
 //		benchmark(new TwoSumUsingSorting());
-		benchmark(new TwoSumUsingHashMap());
+//		benchmark(new TwoSumUsingHashMap());
+		benchmark(new TwoSumUsingSet());
 	}
 
 	static void generateTestFile() throws IOException {

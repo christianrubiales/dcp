@@ -12,3 +12,4 @@ Max 100 elements per test
 
 TwoSumUsingSorting: 271ms
 TwoSumUsingHashMap: 570ms
+TwoSumUsingSet:     414ms
