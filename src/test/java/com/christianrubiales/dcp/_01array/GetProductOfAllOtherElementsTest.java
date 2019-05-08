@@ -27,18 +27,18 @@ public class GetProductOfAllOtherElementsTest extends TestCase {
 	}
 
 	@Test
-	public void testGetProductOfAllOtherElementsWithoutDivision() {
+	public void testGetProductOfAllOtherElementsConstant() {
 		int[] A = {1, 2, 3, 4, 5};
 		assertArrayEquals(
-				GetProductOfAllOtherElements.getProductOfAllOtherElementsWithoutDivision(A),
+				GetProductOfAllOtherElements.getProductOfAllOtherElementsConstantSpace(A),
 				new int[]{120, 60, 40, 30, 24});
 	}
 
 	@Test
-	public void testGetProductOfAllOtherElementsWithoutDivisionConstant() {
+	public void testGetProductOfAllOtherElementsWithoutDivision() {
 		int[] A = {1, 2, 3, 4, 5};
 		assertArrayEquals(
-				GetProductOfAllOtherElements.getProductOfAllOtherElementsWithoutDivisionConstant(A),
+				GetProductOfAllOtherElements.getProductOfAllOtherElementsWithoutDivision(A),
 				new int[]{120, 60, 40, 30, 24});
 	}
 }

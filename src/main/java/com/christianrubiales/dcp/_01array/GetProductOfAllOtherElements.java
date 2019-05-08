@@ -91,13 +91,13 @@ public class GetProductOfAllOtherElements {
 	 * log(x) = log(a * b * c)
 	 * log(x) = log(a) + log(b) + log(c)
 	 * x = 10 ^ (log(a) + log(b) + log(c))
-	 * O(1) additional space
-	 * log in Java is O(1)
+	 * O(n) time, O(1) additional space
+	 * There is division in Java log
 	 * @see https://www.geeksforgeeks.org/product-array-puzzle-set-2-o1-space/
 	 * @see https://www.netlib.org/fdlibm/e_log.c
 	 * @see https://www.netlib.org/fdlibm/e_log10.c
 	 */
-	static int[] getProductOfAllOtherElementsWithoutDivisionConstant(int[] elements) {
+	static int[] getProductOfAllOtherElementsConstantSpace(int[] elements) {
 		int[] result = new int[elements.length];
 		
 		double sum = 0;
