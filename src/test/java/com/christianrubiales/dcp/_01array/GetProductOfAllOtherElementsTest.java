@@ -14,6 +14,16 @@ public class GetProductOfAllOtherElementsTest extends TestCase {
 		assertArrayEquals(
 				GetProductOfAllOtherElements.getProductOfAllOtherElements(A),
 				new int[]{120, 60, 40, 30, 24});
+
+		A = new int[] {0, 1, 2, 3, 4, 5};
+		assertArrayEquals(
+				GetProductOfAllOtherElements.getProductOfAllOtherElements(A),
+				new int[]{120, 0, 0, 0, 0, 0});
+
+		A = new int[] {0, 1, 2, 3, 4, 5, 0};
+		assertArrayEquals(
+				GetProductOfAllOtherElements.getProductOfAllOtherElements(A),
+				new int[]{0, 0, 0, 0, 0, 0, 0});
 	}
 
 	@Test

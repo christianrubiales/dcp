@@ -4,8 +4,15 @@ public class GetProductOfAllOtherElements {
 
 	// naive O(n) time O(n) space
 	static int[] getProductOfAllOtherElements(int[] elements) {
-		int[] result = new int[elements.length];		
-		
+		int[] result = new int[elements.length];
+		int zeroes = getZeroes(elements);
+
+		if (zeroes == 1) {
+			return getProductOfAllOtherElementsWithOneZero(elements);
+		} else if (zeroes > 1) {
+			return result;
+		}
+
 		int product = 1;
 		for (int i : elements) {
 			product *= i;
@@ -13,6 +20,38 @@ public class GetProductOfAllOtherElements {
 		
 		for (int i = 0; i < elements.length; i++) {
 			result[i] = product / elements[i];
+		}
+		
+		return result;
+	}
+	
+	static int getZeroes(int[] elements) {
+		int zeroes = 0;
+		
+		for (int element : elements) {
+			if (element == 0) {
+				zeroes++;
+			}
+		}
+		
+		return zeroes;
+	}
+	
+	static int[] getProductOfAllOtherElementsWithOneZero(int[] elements) {
+		int[] result = new int[elements.length];
+		int zeroIndex = 0;
+		
+		int product = 1;
+		for (int i = 0; i < elements.length; i++) {
+			if (elements[i] != 0) {
+				product *= elements[i];
+			} else {
+				zeroIndex = i;
+			}
+		}
+		
+		for (int i = 0; i < elements.length; i++) {
+			result[i] = (i == zeroIndex) ? product : 0;
 		}
 		
 		return result;
@@ -53,7 +92,10 @@ public class GetProductOfAllOtherElements {
 	 * log(x) = log(a) + log(b) + log(c)
 	 * x = 10 ^ (log(a) + log(b) + log(c))
 	 * O(1) additional space
+	 * log in Java is O(1)
 	 * @see https://www.geeksforgeeks.org/product-array-puzzle-set-2-o1-space/
+	 * @see https://www.netlib.org/fdlibm/e_log.c
+	 * @see https://www.netlib.org/fdlibm/e_log10.c
 	 */
 	static int[] getProductOfAllOtherElementsWithoutDivisionConstant(int[] elements) {
 		int[] result = new int[elements.length];
