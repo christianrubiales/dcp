@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class PickRandomElementFromStream {
 
-	// reservoir sampling
+	// reservoir sampling of size 1
 	static int random(Iterator<Integer> iterator) {
 		int result = 0;
 		Random random = new Random();
@@ -29,7 +29,7 @@ public class PickRandomElementFromStream {
 		for (int i = 1; i <= 5; i++) {
 			List<Integer> list = new ArrayList<>();
 			
-			for (int j = 0; j < i; j++) {
+			for (int j = 0; j < 10; j++) {
 				list.add(j);
 			}
 
