@@ -73,14 +73,10 @@ public class GetProductOfAllOtherElements {
 			suffix[i] = suffix[i + 1] * elements[i];
 		}
 		
-		for (int i = 0; i < elements.length; i++) {
-			if (i == 0) {
-				result[i] = suffix[i + 1];
-			} else if (i == elements.length - 1) {
-				result[i] = prefix[i - 1];
-			} else {
-				result[i] = prefix[i - 1] * suffix[i + 1];
-			}
+		result[0] = suffix[1];
+		result[elements.length - 1] = prefix[elements.length - 2];
+		for (int i = 1; i < elements.length - 1; i++) {
+			result[i] = prefix[i - 1] * suffix[i + 1];
 		}
 		
 		return result;
