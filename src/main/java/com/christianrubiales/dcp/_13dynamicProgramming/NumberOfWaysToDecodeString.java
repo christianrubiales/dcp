@@ -1,8 +1,8 @@
 package com.christianrubiales.dcp._13dynamicProgramming;
 
-// O(n) time, O(n) space
 public class NumberOfWaysToDecodeString {
 
+	// O(n) time, O(n) space
 	public int numberOfDecodings(String s) {
 		if (s == null || s.isEmpty()) {
 			return 0;

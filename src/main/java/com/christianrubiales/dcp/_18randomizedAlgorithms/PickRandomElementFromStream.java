@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PickRandomElementFromStream {
 
 	// reservoir sampling of size 1
 	static int random(Iterator<Integer> iterator) {
 		int result = 0;
-		Random random = new Random();
+		Random random = ThreadLocalRandom.current();
 		int n = 0;
 		
 		while (iterator.hasNext()) {
