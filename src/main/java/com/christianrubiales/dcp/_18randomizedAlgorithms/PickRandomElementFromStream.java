@@ -10,6 +10,10 @@ public class PickRandomElementFromStream {
 
 	// reservoir sampling of size 1
 	static int random(Iterator<Integer> iterator) {
+		if (iterator == null || !iterator.hasNext()) {
+			throw new IllegalArgumentException("iterator must not be null and the collection must not be empty");
+		}
+		
 		int result = 0;
 		Random random = ThreadLocalRandom.current();
 		int n = 0;
@@ -36,7 +40,23 @@ public class PickRandomElementFromStream {
 
 			System.out.println(random(list.iterator()));
 		}
+		
+		List<Integer> list = new ArrayList<>();
+		list.add(123);
+		System.out.println(random(list.iterator()));
 
+		try {
+			random(null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+
+		try {
+			random(new ArrayList<Integer>().iterator());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
